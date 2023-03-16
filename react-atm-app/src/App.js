@@ -6,8 +6,12 @@ import Home from './components/Home';
 import Widthdrawal from './components/Widthdrawal';
 import Deposit from './components/Deposit';
 import Balance from './components/Balance';
+import { useState } from 'react';
+
+
 
 function App() {
+  const [amount, setAmount] = useState(100);
   return (
     <Router>
         <Switch>
@@ -18,13 +22,13 @@ function App() {
             <Home/>
           </Route>
           <Route exact path="/withdrawal">
-            <Widthdrawal/>
+            <Widthdrawal amount = {amount} setAmount={setAmount}/>
           </Route>
           <Route exact path="/deposit">
-            <Deposit/>
+            <Deposit amount = {amount} setAmount={setAmount}/>
           </Route>
           <Route exact path="/balance">
-            <Balance/>
+            <Balance amount = {amount}/>
           </Route>
         </Switch>          
     </Router>
