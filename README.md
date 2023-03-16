@@ -1,6 +1,7 @@
 # ATM APP
 
 This project was setup with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/117302789/225685371-249b0940-54c8-4206-ae8c-e7ed8a91e323.png)
 
 ## Project description
 First you will get a splash screen with the bank logo, then you will be redirect to the Home page where you will be able to select from different options, for the purpose of this practice we have only Deposit, Withdrawal and Balance functionality.
