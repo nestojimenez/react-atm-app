@@ -21,7 +21,7 @@ const Home = () => {
         
         <div className='row justify-content-center'>
             <div className="col-3">
-                <div class="d-grid gap-2 mt-5">
+                <div className="d-grid gap-2 mt-5">
                     <button type="button" className="btn btn-primary btn-lg mt-5" onClick={moveToWithdrawal}>Withdrawal</button>
                     <button type="button" className="btn btn-primary btn-lg mt-5" onClick={moveToDiposit}>Deposit</button>
                     <button type="button" className="btn btn-primary btn-lg mt-5" onClick={moveToBalance}>Balance</button>

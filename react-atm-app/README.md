@@ -4,7 +4,7 @@ This project was setup with [Create React App](https://github.com/facebook/creat
 
 ## Project description
 First you will get a splash screen with the bank logo, then you will be redirect to the Home page where you will be able to select from different options, for the purpose of this practice we have only Deposit, Withdrawal and Balance functionality.
-Your Balance starts at $100.00, then you can you to Deposits or Withdrawals, for Deposits you need to enter the amount of deposit you want to performe, this will be store on a variable that will keep the record of your Balance, about Withdrawals, theres is a few options, quick withdrawals of fix amount like $100.00, $200.00, etc and an option for select a custom amount, here you can enter the amount you want to get, if the amount to get is grater than your balance you will get an alert, if the amount to get is less than balance, you will get an alert asking to take your cash!.
+Your Balance starts at $100.00, then you can you to Deposits or Withdrawals, for Deposits you need to enter the amount of deposit you want to performed, this will be store on a variable that will keep the record of your Balance, about Withdrawals, theres is a few options, quick withdrawals of fix amount like $100.00, $200.00, etc and an option for select a custom amount, here you can enter the amount you want to get, if the amount to get is grater than your balance you will get an alert, if the amount to get is less than balance, you will get an alert asking to take your cash!.
 
 ## Available Scripts
 

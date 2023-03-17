@@ -1,19 +1,13 @@
 import BankIntro from '../images/bankintro.jpeg'
 import { useHistory } from 'react-router-dom';
 
-const Deposit = ({amount, setAmount}) => {
+const Deposit = ({setDeposit}) => {
 
     const history = useHistory();
     let amountDeposit = 0;
 
     const moveToHome = () =>{
         history.push('/home');
-    }
-
-    const deposit = () =>{
-        console.log(amountDeposit)
-        setAmount(amount += Number(amountDeposit));
-        console.log(amount);
     }
 
     const handleChange = (e)=>{
@@ -31,9 +25,9 @@ const Deposit = ({amount, setAmount}) => {
                 <img className="mx-auto d-block mt-5" src={BankIntro} alt="" />
 
                 <div class="input-group mt-5">
-                    <span class="input-group-text">$</span>
+                    <span className="input-group-text">$</span>
                     <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" onChange={handleChange}/>
-                    <span className="input-group-text">.00 <button className="btn btn-primary" onClick={deposit}>Enter</button></span>
+                    <span className="input-group-text">.00 <button className="btn btn-primary" onClick={() => setDeposit(amountDeposit)}>Enter</button></span>
                 </div>
                 <h3 className="text-uppercase text-bg-dark text-center mt-5">Please enter de amount to deposit</h3> 
             </div> 

@@ -9,8 +9,6 @@ const Balance = ({amount}) => {
         history.push('/home');
     }
 
-    const balance = 100.53;
-
   return (
     <div className="container-fluid bg-dark home" style = {{height:"100vh"}}>
         
