@@ -3,6 +3,8 @@ import BankIntro from '../images/bankintro.jpeg'
 
 import { useHistory } from 'react-router-dom';
 
+import {useFormik} from 'formik'
+
 const Widthdrawal = ({setWithdrawal}) => {
 
     const history = useHistory();
@@ -20,8 +22,35 @@ const inputSelectAmount = () => {
   setSelectAmount(!selectAmount);
 }
 
-const handleChange = (e)=>{
+/*const handleChange = (e)=>{
     amountTotake = Number(e.target.value);
+}*/
+
+const formik = useFormik(
+        
+    {        
+    initialValues: {
+        amount:'100'
+    },
+    onSubmit: values =>{
+        console.log('fomr: ', values);
+        amountTotake = Number(values.amount);
+        console.log('My deposit: ',amountTotake);
+        setWithdrawal(amountTotake);
+    },
+    validate: values =>{
+        let errors= {};
+        if(!values.amount) errors.name = 'Required';
+       
+        if(!isNumber(values.amount) && values.amount) errors.name= 'Please enter a number';
+        
+        return errors;
+    }
+})
+
+function isNumber(value) {
+    //console.log(/^-?\d+$/.test(value));
+    return /^-?\d+$/.test(value);
 }
 
   return (
@@ -41,12 +70,14 @@ const handleChange = (e)=>{
             <div className="col-6">
                 <h1 className="text-uppercase text-bg-dark text-center mt-5">Tijuana Bank Withdrawal</h1> 
                 <img className="mx-auto d-block mt-5" src={BankIntro} alt="" />
-
-                {selectAmount && <div class="input-group mt-5">
-                      <span class="input-group-text">$</span>
-                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" onChange={handleChange}/>
-                      <span class="input-group-text">.00 <button className="btn btn-primary" onClick={() => setWithdrawal(amountTotake)}>Enter</button></span>
-                    </div>}
+                <form onSubmit={formik.handleSubmit}>
+                    <div class="input-group mt-5">
+                        <span className="input-group-text">$</span>
+                        <input name='amount' type="text" class="form-control" aria-label="Amount (to the nearest dollar)" onChange={formik.handleChange} value={formik.values.amount}/>
+                        <span className="input-group-text">.00 <button type="submit" className="btn btn-primary">Enter</button></span>
+                    </div>
+                    {formik.errors.name ? <h3 className='mt-5 text-center' style={{color: 'red'}}>{formik.errors.name}</h3>: null}
+                </form>
             </div> 
 
             <div className="col-3">
@@ -58,7 +89,7 @@ const handleChange = (e)=>{
                     
                 </div>
 
-            </div>  
+            </div>
             
                 
         </div>
